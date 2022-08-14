@@ -1,0 +1,13 @@
+ul {
+    list-style-type: none;
+    font-size: 20px;
+    padding: 25px;
+}
+
+li {
+    padding: 25px;
+}
+
+.currentWeather {
+    margin-left: 20px;
+}
