@@ -184,10 +184,10 @@ function addHistory(queryResult){
     var name = queryResult.name;
     if (searchHistory.indexOf(name) == -1) {
         searchHistory.push(name);
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     } else {
         return;
     }
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
 
 function renderSearchHistory() {
