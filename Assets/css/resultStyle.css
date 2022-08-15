@@ -5,9 +5,46 @@ ul {
 }
 
 li {
-    padding: 25px;
+    padding: 20px;
 }
 
 .currentWeather {
     margin-left: 20px;
+}
+
+.favorable {
+    background-color: darkcyan;
+    color: aliceblue;
+    font-weight: bold;
+    padding:5px;
+}
+
+.moderate {
+    background-color: darkgoldenrod;
+    color: aliceblue;
+    font-weight: bold;
+    padding:5px;
+}
+
+.severe {
+    background-color: brown;
+    color: aliceblue;
+    font-weight: bold;
+    padding:5px;
+}
+
+.historyBtn {
+    border-radius: 5px;
+}
+
+#forecast {
+    font-size: 30px;
+    padding: 10px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.futureWeather {
+    margin-left: 20px;
+    background-color: cadetblue;
 }
