@@ -8,13 +8,13 @@
 
 
 .header{
-    background-color:linen;
+    background-color:#336699;
     padding: 22px;
     text-align: center;
 }
 
 h1{
-    color: cadetblue;
+    color: white;
     font-size: 40px;
 }
 
@@ -33,7 +33,7 @@ h2{
 .search-btn{
     margin-top: 20px;
     padding:5px;
-    background-color: cornflowerblue;
+    background-color: #778797;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -41,7 +41,6 @@ h2{
 }
 
 #current-weather{
-    background-color: antiquewhite;
     height: 40vh;
 }
 

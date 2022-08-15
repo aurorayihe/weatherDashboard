@@ -191,15 +191,17 @@ function addHistory(queryResult){
 }
 
 function renderSearchHistory() {
+    let pastContentJSON = localStorage.getItem("searchHistory");
+    let pastContent = JSON.parse(pastContentJSON);
     let checkpoint3 = document.querySelectorAll(".historyBtn");
-    console.log(checkpoint3);
     if (checkpoint3.length !== 0){
         for (let j = 0; j < checkpoint3.length; j++) {
             checkpoint3[j].parentNode.removeChild(checkpoint3[j]);
         }
     }
-    for (let i = 0; i < searchHistory.length; i++) {
-        var history = searchHistory[i];
+    for (let i = 0; i < pastContent.length; i++) {
+        var history = pastContent[i];
+        console.log(pastContent[i]);
         var cityNameEl = document.createElement('button');
         cityNameEl.textContent = history;
         cityNameEl.classList.add('historyBtn', 'col-12');
@@ -211,3 +213,4 @@ searchBtnEl.addEventListener('click', searchCityWeather);
 searchHistoryEl.addEventListener('click', searchCityWeather);
 
 getParams();
+renderSearchHistory();

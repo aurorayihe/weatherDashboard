@@ -36,6 +36,9 @@ li {
 .historyBtn {
     border-radius: 5px;
     margin-top: 10px;
+    border: none;
+    padding: 8px;
+    font-size: 20px;
 }
 
 #forecast {
@@ -47,5 +50,5 @@ li {
 
 .futureWeather {
     margin-left: 20px;
-    background-color: cadetblue;
+    background-color:#3366996a;
 }
