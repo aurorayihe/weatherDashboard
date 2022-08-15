@@ -165,34 +165,49 @@ function checkContent(){
 // Search the city weather 
 function searchCityWeather(event) {
     event.preventDefault();
-    var cityName = document.querySelector('#search-input').value;
-    if (!cityName) {
-        console.log("You need a city name!");
-        return;
+    if (event.target.textContent == "Search"){
+        var cityName = document.querySelector('#search-input').value;
+        if (!cityName) {
+            console.log("You need a city name!");
+            return;
+        } 
+    } else {
+        var cityName = event.target.textContent;
     }
     searchApi(cityName);
+    cityName.value = "";
 }
 
 // Render search history
 var searchHistory = [];
 function addHistory(queryResult){
     var name = queryResult.name;
-    searchHistory.push(name);
+    if (searchHistory.indexOf(name) == -1) {
+        searchHistory.push(name);
+    } else {
+        return;
+    }
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
 
 function renderSearchHistory() {
-    searchHistoryEl.innerHTML = "";
+    let checkpoint3 = document.querySelectorAll(".historyBtn");
+    console.log(checkpoint3);
+    if (checkpoint3.length !== 0){
+        for (let j = 0; j < checkpoint3.length; j++) {
+            checkpoint3[j].parentNode.removeChild(checkpoint3[j]);
+        }
+    }
     for (let i = 0; i < searchHistory.length; i++) {
         var history = searchHistory[i];
         var cityNameEl = document.createElement('button');
         cityNameEl.textContent = history;
         cityNameEl.classList.add('historyBtn', 'col-12');
         searchHistoryEl.appendChild(cityNameEl);
-       // cityNameEl.addEventListener('click', searchCityWeather);
     }
 }
 
 searchBtnEl.addEventListener('click', searchCityWeather);
+searchHistoryEl.addEventListener('click', searchCityWeather);
 
 getParams();
